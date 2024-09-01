@@ -1,4 +1,6 @@
 import setuptools
+from Cython.Build import cythonize
+import numpy
 
 with open("README.md", "r") as fh:
     long_description = fh.read()
@@ -17,5 +19,10 @@ setuptools.setup(
         "Programming Language :: Python :: 3",
         "License :: OSI Approved :: MIT License",
         "Operating System :: OS Independent",
-    ]
+    ],
+    ext_modules=cythonize([
+         'tdavec/func.pyx'
+         ],
+        annotate=True),
+    include_dirs=[numpy.get_include()]
 )
