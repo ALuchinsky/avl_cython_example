@@ -3,6 +3,8 @@ tdavec/__pycache__/
 build/
 dist/
 
+.vscode
+
 my_package.egg-info/
 my_package/__pycache__/
 my_package/my_module.c
